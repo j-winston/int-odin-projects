@@ -1,13 +1,21 @@
 /* Base styles */ 
 
+:root {
+    --left-space: 48px;
+
+}
+
 *{
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
+
+
+body, 
+html {
+    margin: 0px;
     background-color: #ededed;
+    display: block;
 }
 
 
@@ -17,7 +25,7 @@ optgroup,
 textarea,
 p {
     font-family: inherit;
-    margin: 0;
+    margin: 0px;
 }
 
 
@@ -28,7 +36,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
-    width: 100%;
+    max-width: 100%;
 }
 
 
@@ -85,38 +93,26 @@ p {
 
 .text-section {
     width: 100%;
-    height: 100%;
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+
 }
 
 
 .text-section__heading {
-    font-size: 2rem;
+    font-size: 1.5em;
     font-weight: 600;
+    margin-left: var(--left-space);
+    margin-top: 20px;
+    margin-right: 40px;
 
-    width: 75%;
-    margin: 40px 10px 0px 5px;
 }
+
 
 
 /* Form styling */ 
-
-.form-container {
-    height: 50%;
-    width: 100%;
-    background-color: white;
-
-    box-shadow: 0 8px 8px 4px rgba(0, 0, 0, .10) ;
-
-}
-
-.form__heading {
-    font-size: 1.5rem;
-    width: 100%;
-}
 
 
 .form  {
@@ -124,23 +120,49 @@ p {
     flex-wrap: wrap;
     justify-content: center;
 
-    padding: 30px;
-    
-}
-
-
-.form div {
     width: 100%;
-    margin: 10px;
 }
 
 
-.form input[type="text"],
-.form input[type="password"],
-.form input[type="submit"],
-.form input[type="email"], 
-.form input[type="tel"] {
-    font-size: 1rem; 
+.form__heading {
+    margin-left: var(--left-space);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+
+.form__inputs{
+    width: 100%;
+    background-color: white;
+
+    margin-top: 40px;
+    padding: 40px 0;
+    box-shadow: 0 8px 8px 4px rgba(0, 0, 0, .10) ;
+    
+
+
+}
+
+
+.form__inputs div {
+    width: 90%;
+    margin-left: var(--left-space);
+    margin-bottom: 20px;
+}
+
+.form__inputs div label {
+    font-size: .9rem;
+
+}
+
+
+.form__inputs div input[type="text"],
+.form__inputs div input[type="password"],
+.form__inputs div input[type="submit"],
+.form__inputs div input[type="email"], 
+.form__inputs div input[type="tel"] {
+    font-size: 1.2rem; 
 
     display: block;
     width: 100%;
@@ -150,7 +172,58 @@ p {
     border-radius: 4px;
     
     outline: none;
+    padding: 3px 6px;
 
-    padding: 10px;
 }
 
+
+
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 40px;
+
+}
+
+
+.create-account .create-account__button {
+    color: #fff;
+    background-color: #596d48; 
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    height: 60px;
+    width: 500px;
+
+    margin: 40px 0 10px;
+
+
+    box-shadow: -1px 3px 4px 4px rgba(0, 0, 0, .10) ;
+
+    cursor: pointer;
+
+}
+
+
+.create-account__footer-text {
+    text-align: center;
+}
+
+
+.create-account__login-link {
+    color: #596d48;
+    font-weight: 600;
+    
+}
+
+/* Form indicators */ 
+
+.form__inputs div input:invalid {
+    border: 1px solid red;
+
+
+}
