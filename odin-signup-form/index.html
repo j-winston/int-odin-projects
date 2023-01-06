@@ -24,12 +24,12 @@
                 <em>You know you want to.</em>
             </div>
 
-                <form action="" class="form">
+                <form action="#" class="form" method="get">
                     <div class="form__inputs">
                         <p class="form__heading">Let's do this!</p>
                         <div class="form__fname">
                             <label for="fname">FIRST NAME</label>
-                            <input type="text" placeholder="John" id="fname" required pattern="[^\d]*" autocomplete="name"> </div>
+                            <input type="text" name=fname placeholder="John" id="fname" required pattern="[^\d]*" autocomplete="name"> </div>
                         <div class="form__lname">
                             <label for="lname">LAST NAME</label>
                             <input type="text" pattern="[^\d]*" placeholder="Deer" required="required" id="lname"> </div>
@@ -39,15 +39,15 @@
                         </div>
                         <div class="form__phone-number">
                             <label for="tel">PHONE NUMBER</label>
-                            <input type="tel" id="tel">
+                            <input type="tel" id="tel" placeholder="888-888-8888" pattern="[\d]{3}-[\d]{3}-[\d]{4}">
                         </div>
                         <div class="form__password">
                             <label for="password">PASSWORD</label>
-                            <input type="password" id="user_password">
+                            <input type="password" required id="user_password">
                         </div>
                         <div class="form__confirm-password">
                             <label for="conf-password">PASSWORD</label>
-                            <input type="password" id="conf-password">
+                            <input type="password" required id="conf-password">
                         </div>
                     </div>
 
@@ -63,4 +63,6 @@
     </div>
 
 </body>
+
+<script src=script.js></script> 
 </html>

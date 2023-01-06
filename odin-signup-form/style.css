@@ -151,10 +151,7 @@ p {
     margin-bottom: 20px;
 }
 
-.form__inputs div label {
-    font-size: .9rem;
 
-}
 
 
 .form__inputs input {
@@ -169,6 +166,8 @@ p {
     
     outline: none;
     padding: 3px 6px;
+
+    transition: .5s all ease-in;
 
 }
 
@@ -222,6 +221,20 @@ p {
     border: 1px solid red;
 }
 
+
+.form__inputs div:has(input:valid)::after {
+    display: flex;
+    justify-content: flex-end;
+    
+    content:"✔️ ";
+    color: green;
+
+    margin-right: 10px;
+    margin-top: -20px;
+    display: absolute;
+
+}
+
 .form__inputs input:valid {
     border: 1px solid green;
 }
@@ -234,8 +247,50 @@ p {
 }
 
 
+/* label styling */ 
+
+.form__inputs label {
+    letter-spacing: .5px; 
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    color: #202020; 
+
+}
+.form__inputs div:has(input:required) label:before{
+    content:'*';
+    margin-right: 4px;
+}
+
+/* validation warning stylings */ 
+
+/* First name, last name */ 
+.form__inputs .form__fname:has(input:invalid:not(:placeholder-shown))::after,  
+.form__inputs .form__lname:has(input:invalid:not(:placeholder-shown))::after {
+    display: flex;
+    justify-content: flex-start;
+
+    color: red;
+    content: "Letters only, please.";
+
+}
+
+.form__inputs label {
+    width:100%;
+}
 
 
+/* Email */ 
 
+.form__inputs .form__email:has(input:invalid:not(:focus):not(:placeholder-shown))::after {
+    color: red;
+    content: "Please use name@domain.com format."
+} 
 
+/* Phone number */ 
+
+.form__inputs .form__phone-number:has(input:invalid:not(:focus):not(focus :placeholder-shown))::after {
+    color: red;
+    content: "Oops. Did you use xxx-xxx-xxxx format?"
+
+}
 
