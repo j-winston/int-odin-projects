@@ -157,11 +157,7 @@ p {
 }
 
 
-.form__inputs div input[type="text"],
-.form__inputs div input[type="password"],
-.form__inputs div input[type="submit"],
-.form__inputs div input[type="email"], 
-.form__inputs div input[type="tel"] {
+.form__inputs input {
     font-size: 1.2rem; 
 
     display: block;
@@ -220,10 +216,26 @@ p {
     
 }
 
-/* Form indicators */ 
+/* validation styling */ 
 
-.form__inputs div input:invalid {
+.form__inputs input:invalid{
     border: 1px solid red;
-
-
 }
+
+.form__inputs input:valid {
+    border: 1px solid green;
+}
+
+
+.form__inputs input:invalid:focus,
+.form__inputs input:valid:focus,
+.form__inputs input:placeholder-shown {
+    border: 1px solid #d8d8d8;
+}
+
+
+
+
+
+
+

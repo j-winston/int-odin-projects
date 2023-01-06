@@ -29,13 +29,13 @@
                         <p class="form__heading">Let's do this!</p>
                         <div class="form__fname">
                             <label for="fname">FIRST NAME</label>
-                            <input type="text" id="fname" autocomplete="name"> </div>
+                            <input type="text" placeholder="John" id="fname" required pattern="[^\d]*" autocomplete="name"> </div>
                         <div class="form__lname">
                             <label for="lname">LAST NAME</label>
-                            <input type="text" required="required" id="lname"> </div>
+                            <input type="text" pattern="[^\d]*" placeholder="Deer" required="required" id="lname"> </div>
                         <div class="form__email">
                             <label for="email">EMAIL</label>
-                            <input type="email" id="email" required="required">
+                            <input type="email" placeholder="wah@wah.com " id="email" required="required">
                         </div>
                         <div class="form__phone-number">
                             <label for="tel">PHONE NUMBER</label>
