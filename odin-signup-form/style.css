@@ -217,12 +217,23 @@ p {
 
 /* validation styling */ 
 
-.form__inputs input:invalid{
+.form__inputs input:invalid,
+.form__inputs .form__password:has(input[match="false"]:not(:placeholder-shown)) input,   
+.form__inputs .form__confirm-password:has(input[match="false"]:not(:placeholder-shown)) input {  
     border: 1px solid red;
 }
 
 
-.form__inputs div:has(input:valid)::after {
+
+
+
+.form__inputs input:valid,
+.form__inputs .form__password:has(input[match="true"]:not(:placeholder-shown)) input {  
+    border: 1px solid green;
+}
+
+
+.form__inputs div:not('.form__confirm-password'):not('.form__password'):has(input:valid)::after {
     display: flex;
     justify-content: flex-end;
     
@@ -235,10 +246,23 @@ p {
 
 }
 
-.form__inputs input:valid {
-    border: 1px solid green;
+
+/* display checkmark if passwords match */ 
+.form__inputs div:has(input[match="true"]:valid)::after {
+    display: flex;
+    justify-content: flex-end;
+    
+    content:"✔️ ";
+    color: green;
+
+    margin-right: 10px;
+    margin-top: -20px;
+    display: absolute;
+
 }
 
+
+/* Display default border whenver fields are out of focus/blank */
 
 .form__inputs input:invalid:focus,
 .form__inputs input:valid:focus,
@@ -256,6 +280,8 @@ p {
     color: #202020; 
 
 }
+
+
 .form__inputs div:has(input:required) label:before{
     content:'*';
     margin-right: 4px;
@@ -271,8 +297,26 @@ p {
 
     color: red;
     content: "Letters only, please.";
+}
+
+
+/* Display warning message if passwords don't match */
+
+.form__inputs .form__password:has(input[match="false"]:not(:placeholder-shown))::after {  
+    display: flex;
+    justify-content: flex-start;
+
+    color: red;
+    content: "Passwords should be the same."
 
 }
+
+
+.form__inputs .form__password:has(input[match="true"]:not(:placeholder-shown)) input {  
+    border: 1px solid green;
+}
+
+
 
 .form__inputs label {
     width:100%;

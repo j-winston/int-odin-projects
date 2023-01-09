@@ -42,12 +42,11 @@
                             <input type="tel" id="tel" placeholder="888-888-8888" pattern="[\d]{3}-[\d]{3}-[\d]{4}">
                         </div>
                         <div class="form__password">
-                            <label for="password">PASSWORD</label>
-                            <input type="password" name=user_password required id="user_password">
+                            <label for="password" class="form__password-label">PASSWORD</label>
+                            <input type="password" name=user_password class="form__password-input"  required placeholder="6 characters, 1 uppercase" id="user_password">
                         </div>
                         <div class="form__confirm-password">
-                            <label for="conf-password">PASSWORD</label>
-                            <input type="password" name=user_password_confirm required id="conf-password">
+                            <label for="conf-password">CONFIRM PASSWORD</label> <input type="password" name=user_password_confirm required id="conf-password" class="form__confirm-input" placeholder="6 characters, 1 uppercase">
                         </div>
                     </div>
 
