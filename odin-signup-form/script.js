@@ -27,13 +27,14 @@ passwordConfirmInput.addEventListener('input', () => {
         }
 
     }
-        if (passwd_confirm && passwd == passwd_confirm) {
+        if ( (passwd_confirm) && (passwd == passwd_confirm) ) {
             // to display green check mark if passwords match
            passwordInput.setAttribute("match", true);
            passwordConfirmInput.setAttribute("match", true);
 
         } else {
             if (passwd != passwd_confirm) {
+
                 // Will now display warning message and red outline
                 passwordInput.setAttribute('match', false);
                 passwordConfirmInput.setAttribute('match', false);

@@ -233,7 +233,7 @@ p {
 }
 
 
-.form__inputs div:not('.form__confirm-password'):not('.form__password'):has(input:valid)::after {
+.form__inputs div:has(input:not(:placeholder-shown)):not(.form__confirm-password):not(.form__password):not(.form__phone-number)::after {
     display: flex;
     justify-content: flex-end;
     
@@ -245,6 +245,20 @@ p {
     display: absolute;
 
 }
+
+.form__inputs div:has(input:valid:not(:placeholder-shown)).form__phone-number::after {
+    display: flex;
+    justify-content: flex-end;
+    
+    content:"✔️ ";
+    color: green;
+
+    margin-right: 10px;
+    margin-top: -20px;
+    display: absolute;
+
+} 
+
 
 
 /* display checkmark if passwords match */ 
@@ -287,7 +301,7 @@ p {
     margin-right: 4px;
 }
 
-/* validation warning stylings */ 
+/* validation warnings stylings */ 
 
 /* First name, last name */ 
 .form__inputs .form__fname:has(input:invalid:not(:placeholder-shown))::after,  
@@ -301,8 +315,7 @@ p {
 
 
 /* Display warning message if passwords don't match */
-
-.form__inputs .form__password:has(input[match="false"]:not(:placeholder-shown))::after {  
+.form__inputs:has(.form__confirm-password input:not(:placeholder-shown)) .form__password:has(input[match="false"]:not(:placeholder-shown))::after {  
     display: flex;
     justify-content: flex-start;
 
@@ -321,9 +334,7 @@ p {
 .form__inputs label {
     width:100%;
 }
-
-
-/* Email */ 
+ 
 
 .form__inputs .form__email:has(input:invalid:not(:focus):not(:placeholder-shown))::after {
     color: red;
