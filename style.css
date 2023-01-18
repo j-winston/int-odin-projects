@@ -1,0 +1,385 @@
+/* Base styles */ 
+
+:root {
+    --left-space: 48px;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+body, 
+html {
+    margin: 0px;
+    background-color: #ededed;
+    display: block;
+}
+
+
+button,
+input,
+optgroup,
+textarea,
+p {
+    font-family: inherit;
+    margin: 0px;
+}
+
+
+/* Layout */ 
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    max-width: 100%;
+}
+
+
+
+.image-section {
+    width: 100%;
+    
+    background-image: url("green-leaf-odin.jpg");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.logo {
+
+    background-color: rgba(0, 0, 0, .25);
+
+    height: 20%;
+    width: 100%;
+    margin-top: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+.logo__container {
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    
+}
+
+
+.logo__icon {
+    height: 50%;
+
+}
+
+
+.logo__wordmark {
+    color: white;
+    font-size: 2rem;
+}
+
+
+.attribution p {
+    color: white;
+
+    text-align: right;
+    margin-right: 10px;
+    position: relative;
+    top: 400px;
+    
+}
+
+
+.attribution__link {
+    color: white;
+}
+
+
+.text-section {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+
+
+.text-section__heading {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-left: var(--left-space);
+    margin-top: 20px;
+    margin-right: 40px;
+
+}
+
+
+.form__inputs div {
+    height: 60px; /* Allow space for validation warnings */
+
+
+}
+
+
+/* Form Styling */ 
+
+
+.form  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+}
+
+
+.form__heading {
+    margin-left: var(--left-space);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+
+.form__inputs{
+    width: 100%;
+    background-color: white;
+
+    margin-top: 40px;
+    padding: 40px 0;
+    box-shadow: 0 8px 8px 4px rgba(0, 0, 0, .10) ;
+}
+
+
+.form__inputs div {
+    width: 90%;
+    margin-left: var(--left-space);
+    margin-bottom: 20px;
+}
+
+
+.form__inputs input {
+    font-size: 1.2rem; 
+    
+    display: block;
+    width: 70%;
+    height: 40px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    
+    outline: none;
+    padding: 3px 6px;
+    transition: 1s all ease-in-out;
+}
+
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 80%;
+}
+
+
+.create-account .create-account__footer-text {
+    text-align: center;
+}
+.create-account .create-account__button {
+    color: #fff;
+    background-color: #596d48; 
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    height: 60px;
+
+    margin: 40px 0 10px;
+
+
+    box-shadow: -1px 3px 4px 4px rgba(0, 0, 0, .10) ;
+
+    cursor: pointer;
+
+}
+
+.create-account__button:active {
+    transform: scale(.99, .99);
+}
+
+
+.create-account__login-link {
+    color: #596d48;
+    font-weight: 600;
+    
+}
+
+
+/* Validation Styling */ 
+
+/* Green or red borders should display only after user clicks outside of fields 
+ * and inputs are empty */ 
+.form__inputs input:invalid,
+.form__inputs:has(.form__confirm-password input:not(:placeholder-shown)) .form__password:has(input[match="false"]:not(:placeholder-shown)) input,   
+.form__inputs .form__confirm-password:has(input[match="false"]:not(:placeholder-shown)) input {  
+    border: 1px solid red;
+}
+
+
+.form__inputs input:valid,
+.form__inputs .form__password:has(input[match="true"]:not(:placeholder-shown)) input {  
+    border: 1px solid green; 
+}
+
+
+/* Immediately confirm valid input or matching password with a 
+ * green check mark */ 
+.form__inputs div:has(input:valid:not(:placeholder-shown)):not(.form__confirm-password):not(.form__password)::after,
+.form__inputs div:has(input[match="true"]:valid)::after {
+    content:"✔️ ";
+    color: green;
+
+}
+
+
+/* Display default border whenver fields are out of focus/blank 
+ * Confirm Password should display green border even when in focus 
+ * to give finality to the form since it's the last field */
+
+.form__inputs input:invalid:focus,
+.form__inputs input:not(.form__confirm-input):valid:focus,
+.form__inputs input:placeholder-shown {
+    border: 1px solid #d8d8d8;
+}
+
+
+
+/* Label Styling */ 
+
+.form__inputs label {
+    letter-spacing: .5px; 
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    color: #202020; 
+}
+
+
+.form__inputs div:has(input:required) label:before{
+    content:'*';
+    margin-right: 4px;
+}
+
+
+
+/*-------Validation Warnings Stylings------*/ 
+
+/* First name, last name */ 
+.form__inputs .form__fname:has(input:invalid:not(:placeholder-shown))::after,  
+.form__inputs .form__lname:has(input:invalid:not(:placeholder-shown))::after {
+
+    color: red;
+    content: "Letters only, please.";
+}
+
+
+.form__inputs:has(.form__confirm-password input:not(:placeholder-shown)) .form__password:has(input[match="false"]:not(:placeholder-shown))::after {  
+    visibility: visible;
+    color: red;
+    content: "Passwords should be the same.";
+}
+
+ /* If password matches Confirm Password, go green */ 
+.form__inputs .form__password:has(input[match="true"]:not(:placeholder-shown)) input {  
+    border: 1px solid green;
+}
+
+
+.form__inputs label {
+    width:100%;
+}
+ 
+
+.form__inputs .form__email:has(input:invalid:not(:focus):not(:placeholder-shown))::after {
+    color: red;
+    content: "Please use name@domain.com format.";
+} 
+
+
+/* Phone number */ 
+.form__inputs .form__phone-number:has(input:invalid:not(:focus):not(focus :placeholder-shown))::after {
+
+    color: red;
+    content: "Oops. Did you use xxx-xxx-xxxx format?"
+}
+
+
+
+/*------ Desktop Styling ------ */ 
+
+@media only screen and (min-width:801px) {
+
+.content {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    max-width: 100%;
+}
+
+
+.image-section {
+    width: 60%;
+}
+
+.attribution p {
+    top:800px;
+    text-align: center;
+    margin: 0;
+
+}
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form__inputs div {
+    margin-bottom: 40px;
+}
+
+.create-account {
+    width: 100%;
+    margin-left: 40px;
+
+
+}
+
+
+.create-account button {
+    width: 50%;
+}
+
+
+.create-account .create-account__footer-text{
+    margin-top: 10px;
+    text-align: left;
+}
+
+}
+
+
