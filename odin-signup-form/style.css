@@ -61,6 +61,7 @@ p {
     margin-top: 40px;
     
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
@@ -85,9 +86,24 @@ p {
 
 }
 
+
 .logo__wordmark {
     color: white;
     font-size: 2rem;
+}
+
+
+.attribution p {
+    color: white;
+
+    text-align: center;
+    position: relative;
+    top: 800px;
+}
+
+
+.attribution__link {
+    color: white;
 }
 
 
@@ -167,6 +183,7 @@ p {
     
     outline: none;
     padding: 3px 6px;
+    transition: 1s all ease-in-out;
 }
 
 
@@ -200,12 +217,17 @@ p {
 
 }
 
+.create-account__button:active {
+    transform: scale(.99, .99);
+}
+
 
 .create-account__login-link {
     color: #596d48;
     font-weight: 600;
     
 }
+
 
 /* Validation Styling */ 
 
@@ -343,6 +365,7 @@ p {
 .create-account button {
     width: 50%;
 }
+
 
 .create-account .create-account__footer-text{
     margin-top: 10px;
