@@ -96,9 +96,11 @@ p {
 .attribution p {
     color: white;
 
-    text-align: center;
+    text-align: right;
+    margin-right: 10px;
     position: relative;
-    top: 800px;
+    top: 400px;
+    
 }
 
 
@@ -344,7 +346,12 @@ p {
     width: 60%;
 }
 
+.attribution p {
+    top:800px;
+    text-align: center;
+    margin: 0;
 
+}
 .form__inputs {
     display: flex;
     flex-direction: column;
@@ -361,6 +368,7 @@ p {
 
 
 }
+
 
 .create-account button {
     width: 50%;
