@@ -25,7 +25,7 @@ However, I did my best to mitigate some of the suicidal impact of your average
 form. Namely--
 
 * Stop flashing red while I am still typing. It's like you're yelling at me.  
-* Give me immediate feedback when I'm doing it right. Because gratification feels good. 
+* Give me immediate feedback when I'm doing it right. Because instant gratification feels good. 
 * Don't give me your feedback until I leave the field. I feel rushed. 
 * And please, please don't tell me my passwords don't match until AFTER I am done. 
 Because, you guessed it..I am still typing. 
