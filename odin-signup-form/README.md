@@ -36,10 +36,12 @@ HTML/CSS/Javascript
 ### Features 
 ---
 * Mobile-responsive design
-* Gentle validation: starts in passive mode and persists only after leaving field.
+* Gentle validation behaviors: starts in passive mode and persists only after leaving field.
 
 ### Inspiration 
 ---
-
+I stumbled across this [Twitter post](https://twitter.com/vponamariov/status/1400388896136040454).
+The author points out poor UX and I swear i've seen it anywhere. Also, I needed to complete
+this for The Odin Project. Shout out to Odin. 
 
 
