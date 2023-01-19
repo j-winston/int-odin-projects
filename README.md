@@ -3,13 +3,13 @@
 
 ## Table of Contents
 ---
-* Try it 
+* Try It Out
 * Introduction
 * Technologies 
 * Features 
 * Inspiration
 
-### Try It
+### Try It Out
 ---
 [A kinder, more loving form](https://j-winston.github.io/odin-signup-form/)
 
