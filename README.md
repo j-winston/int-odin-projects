@@ -41,7 +41,7 @@ HTML/CSS/Javascript
 ### Inspiration 
 ---
 I stumbled across this [Twitter post](https://twitter.com/vponamariov/status/1400388896136040454).
-The author points out poor UX and I swear i've seen it anywhere. Also, I needed to complete
+The author points out examples of forms with poor UX and I've seen it everywhere. Also, I needed to complete
 this for The Odin Project. Shout out to Odin. 
 
 
