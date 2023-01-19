@@ -50,4 +50,6 @@ I stumbled across this [Twitter post](https://twitter.com/vponamariov/status/140
 The author points out examples of forms with poor UX and I've seen it everywhere. Also, I needed to complete
 this for The Odin Project. Shout out to Odin. 
 
+Also big shout out to Rita Łyczywek for [her article](https://bulldogjob.com/readme/how-to-write-a-good-readme-for-your-github-project) on how to write a README.md file for Github. That's the part we all avoid like the plague. 
+
 
